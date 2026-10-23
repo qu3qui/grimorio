@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "lint": "biome ci .",
+    "format": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "build": "echo \"replace with the framework build command\" && exit 1"
+  }
+}

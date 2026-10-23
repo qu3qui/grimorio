@@ -1,0 +1,17 @@
+# Workflow scratch output (task breakdowns, release notes drafts)
+.workflow/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# --- stack-specific entries appended below by /project-bootstrap ---

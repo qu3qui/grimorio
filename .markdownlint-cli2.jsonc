@@ -1,0 +1,11 @@
+{
+  "config": {
+    "default": true,
+    "MD013": false,          // long lines are fine in prose and tables
+    "MD024": { "siblings_only": true },
+    "MD033": false,          // HTML comments are used as template guidance
+    "MD041": false,          // templates start with an HTML comment
+    "MD060": false
+  },
+  "ignores": ["**/node_modules/**"]
+}

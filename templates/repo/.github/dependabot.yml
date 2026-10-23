@@ -1,0 +1,13 @@
+# Weekly dependency updates. /project-bootstrap appends the stack ecosystem
+# (pip / npm / pub) from templates/quality/<stack>/README.md.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]

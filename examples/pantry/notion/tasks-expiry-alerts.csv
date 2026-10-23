@@ -1,0 +1,8 @@
+Title,Type,Status,Priority,Size,Project,Feature,Milestone,Design
+Compute expiry status for an item,Feature task,Backlog,P1,S,Pantry,Expiry alerts,M1 · MVP core,
+Show expiring-soon list with empty state,Feature task,Backlog,P1,M,Pantry,Expiry alerts,M1 · MVP core,Penpot → 02 Wireframes → Expiring soon
+"Add ""Expiring soon"" card to Home",Feature task,Backlog,P2,S,Pantry,Expiry alerts,M1 · MVP core,Penpot → 03 Key screens → Home
+Add expiry window and notification time settings,Feature task,Backlog,P1,M,Pantry,Expiry alerts,M1 · MVP core,Penpot → 02 Wireframes → Settings
+Schedule daily expiry notification,Feature task,Backlog,P1,M,Pantry,Expiry alerts,M1 · MVP core,
+Handle denied notification permission,Feature task,Backlog,P2,S,Pantry,Expiry alerts,M1 · MVP core,Penpot → 02 Wireframes → Settings
+Document expiry alerts in the user manual,Docs,Backlog,P2,XS,Pantry,Expiry alerts,M1 · MVP core,
