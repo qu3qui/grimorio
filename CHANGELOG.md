@@ -5,7 +5,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [1.0.0] - 2026-10-23
 
-First release of **Grimorio** (github.com/<your-user>/grimorio).
+First release of **Grimorio** ([github.com/qu3qui/grimorio](https://github.com/qu3qui/grimorio)).
 
 ### Added
 

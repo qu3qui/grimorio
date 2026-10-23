@@ -72,7 +72,7 @@ Recommended layout:
 1. **Clone this repo:**
 
    ```bash
-   git clone https://github.com/<your-user>/grimorio.git ~/grimorio
+   git clone https://github.com/qu3qui/grimorio.git ~/grimorio
    ```
 
 2. **Install the Claude Code skills:**
