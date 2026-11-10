@@ -9,7 +9,7 @@ Grimorio defines the personal project workflow (guide + templates + Claude skill
 - `templates/notion/` — Notion page templates (Markdown) + `notion-setup.md` + CSV seeds.
 - `templates/repo/` — files copied verbatim into new project repos. Placeholders use `{{UPPER_SNAKE}}`.
 - `templates/quality/<stack>/` — per-stack lint/format/type/test configs and CI job snippets.
-- `claude/skills/<name>/SKILL.md` — Claude Code skills; installed via `claude/install.sh` (symlinks). Skills with large or outward-facing effects set `disable-model-invocation: true`.
+- `claude/skills/<name>/SKILL.md` — Claude Code skills; installed via `claude/install.sh` (symlinks) or `claude/install.ps1` on Windows (junctions) — keep both scripts in sync. Skills with large or outward-facing effects set `disable-model-invocation: true`.
 - `templates/workspace/CLAUDE.md` — copied to the folder holding all projects (e.g. `~/proyectos/`).
 - `examples/pantry/` — worked example; must stay consistent with the templates.
 

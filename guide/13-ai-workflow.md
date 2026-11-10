@@ -4,7 +4,7 @@ Claude drafts, you decide. Every deliverable Claude produces is reviewed and edi
 
 ## Setup
 
-1. On each machine, follow [Setup on a new machine](../README.md#setup-on-a-new-machine): install the skills (`./claude/install.sh`, symlinks into `~/.claude/skills/`), copy the [workspace `CLAUDE.md`](../templates/workspace/CLAUDE.md) to your projects folder, and allow Claude to read this repo (`additionalDirectories`).
+1. On each machine, follow [Setup on a new machine](../README.md#setup-on-a-new-machine): install the skills (`./claude/install.sh`, symlinks into `~/.claude/skills/`; on Windows `claude\install.ps1`, junctions), copy the [workspace `CLAUDE.md`](../templates/workspace/CLAUDE.md) to your projects folder, and allow Claude to read this repo (`additionalDirectories`).
 2. Every project repo has a `CLAUDE.md` ([template](../templates/repo/CLAUDE.md)) — Claude reads it at the start of each session, together with the workspace `CLAUDE.md` above it. Keep it current: stack, commands, architecture rules, conventions.
 3. Optional: connect the Notion MCP server in Claude Code so Claude can read tasks and create them directly instead of producing CSVs.
 

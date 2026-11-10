@@ -81,7 +81,7 @@ Recommended layout:
    ~/grimorio/claude/install.sh
    ```
 
-   This symlinks every folder in `claude/skills/` into `~/.claude/skills/`, so a `git pull` here updates the skills everywhere — no reinstall needed. The script works from any folder name.
+   This symlinks every folder in `claude/skills/` into `~/.claude/skills/`, so a `git pull` here updates the skills everywhere — no reinstall needed. The script works from any folder name. On Windows use `install.ps1` instead (see [On Windows](#on-windows)).
 3. **Create the projects folder and its `CLAUDE.md`:**
 
    ```bash
@@ -102,6 +102,32 @@ Recommended layout:
 
 5. **Install the base tooling** used by every project: `git`, `pre-commit` (`brew install pre-commit`) and the GitHub CLI (`brew install gh`, then `gh auth login`).
 6. **Check it works:** open Claude Code in `~/proyectos/` and type `/` — `project-bootstrap`, `project-brief`, `feature-spec`, `task-breakdown`, `adr` and `milestone-release` should be listed.
+
+### On Windows
+
+Same steps, with these differences (example layout: repo in `D:\projects\grimorio`, projects in `D:\projects\`):
+
+- **Step 2 — use the PowerShell installer**, not `install.sh`. In Git Bash, `ln -s` silently *copies* the folders instead of linking them, so later edits to the skills would not apply. `install.ps1` creates directory junctions instead (no admin rights or Developer Mode needed):
+
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File D:\projects\grimorio\claude\install.ps1
+  ```
+
+- **Step 3 — copy the workspace file** to your projects folder and replace `~/grimorio` inside it with the real path (forward slashes are fine, e.g. `D:/projects/grimorio`):
+
+  ```powershell
+  Copy-Item D:\projects\grimorio\templates\workspace\CLAUDE.md D:\projects\CLAUDE.md
+  ```
+
+- **Step 4 — use the Windows path** in `%USERPROFILE%\.claude\settings.json`: `"additionalDirectories": ["D:\\projects\\grimorio"]`.
+- **Step 5 — no Homebrew.** Install with `winget`; `pre-commit` needs Python:
+
+  ```powershell
+  winget install Git.Git GitHub.cli Python.Python.3.12
+  # reopen the terminal, then:
+  pip install pre-commit
+  gh auth login
+  ```
 
 ### Manual-only skills
 

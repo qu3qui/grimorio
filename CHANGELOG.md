@@ -3,6 +3,13 @@
 All notable changes to the workflow are recorded here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- `claude/install.ps1`: Windows skill installer using directory junctions (Git Bash's `ln -s` copies instead of linking).
+- "On Windows" section in the README's machine setup (installer, paths, `winget` instead of Homebrew).
+
 ## [1.0.0] - 2026-10-23
 
 First release of **Grimorio** ([github.com/qu3qui/grimorio](https://github.com/qu3qui/grimorio)).
