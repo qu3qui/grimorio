@@ -45,7 +45,7 @@ Legend — **bold** = required for views/metrics to work.
 | **Tasks** | Relation → Tasks | two-way |
 | Reviews | Relation → Reviews | two-way |
 | **Current milestone** | Relation → Milestones | one-way, limit 1; set during planning |
-| **Open tasks** | Rollup | Tasks → Status → *Count per group* → select the `To-do` and `In progress` groups |
+| **Open tasks** | Formula | `prop("Tasks").filter(current.prop("Status") != "Done").length()` — a rollup's *Count per group* only accepts one group |
 | **Last activity** | Rollup | Tasks → *Last edited time* → *Latest date* |
 | Started | Date | |
 
@@ -164,21 +164,23 @@ In each database: *New ▾ → + New template*, then paste the Markdown **body**
 
 Create these views (*+ Add view* on each database). Per-project versions live in the project hub; the cross-project versions live on the *Project Management* page.
 
+**One chart only: Throughput, on the Project Management page.** Notion's free plan allows a single chart view per workspace, and a chart in the project hub template would be copied into every new project. Cycle time is read from *Weekly flow* tables instead: one on the Project Management page (all projects) and one in the project hub (filtered to the project). On a paid plan you may add a Cycle time line chart (X-axis *Completed* by week; Y-axis *Cycle time (d)* → *Median*).
+
 | View | Database | Type | Configuration |
 |---|---|---|---|
 | **Kanban** | Tasks | Board | Group by *Status*; filter *Project = …* (in hub); sort *Priority* ↑; card shows Key, Size, Priority, Feature, Blocked |
 | **Ready queue** | Tasks | List | Filter *Status = Ready*; sort *Priority* ↑, *Created* ↑ |
 | **Aging WIP** | Tasks | Table | Filter *Age (d) > 5*; sort *Age (d)* ↓ |
 | **Bugs** | Tasks | Table | Filter *Type = Bug*, *Status ≠ Done*; sort *Priority* |
-| **Throughput** | Tasks | Chart (vertical bar) | Filter *Status = Done*; X-axis *Completed* grouped **by week**; Y-axis *Count* |
-| **Cycle time** | Tasks | Chart (line) | Filter *Status = Done*; X-axis *Completed* by week; Y-axis *Cycle time (d)* → *Average* |
+| **Throughput** *(Project Management page only)* | Tasks | Chart (vertical bar) | Filter *Status = Done*, *Completed is not empty*; X-axis *Completed* grouped **by week**; Y-axis *Count*; group/color by *Project* (stacked) |
+| **Weekly flow** *(Project Management page and project hub)* | Tasks | Table | Filter *Status = Done*, *Completed is not empty* (+ *Project contains this page* in the hub); group by *Completed* → **Week**, newest first, hide empty groups; footer calculation *Median* (or *Average*) on *Cycle time (d)*; show Key, Title, Size, Started, Completed, Cycle time (d) (+ Project on the Project Management page). Group count = throughput, footer = cycle time |
 | **Timeline** | Milestones | Timeline | By *Dates*; *Dependencies* → use *Blocked by / Blocking*; group by *Project*; show *Progress*, *Health* |
 | **Milestone progress** | Milestones | Table | Filter *Status ≠ Done*; show Version, Dates, Progress (bar), Health |
 | **Features by milestone** | Features | Board | Group by *Milestone*; show MoSCoW, Progress |
 | **Portfolio** | Projects | Board | Group by *Phase*; show Health, Current milestone, Last activity, Open tasks |
 | **Idea inbox** | Ideas | Table | Filter *Status in Inbox, Cooling*; sort *Revisit on* ↑; show Score |
 
-Chart views may be limited on Notion's free plan. If unavailable: Throughput → table of Done tasks *grouped by Completed (week)* with *Count* shown; Cycle time → same grouping with the *Average* calculation on *Cycle time (d)*.
+If your plan has no chart views at all, skip the Throughput chart: the Project Management *Weekly flow* table shows the same counts.
 
 ## 7. Importing tasks from `/task-breakdown`
 
@@ -196,5 +198,5 @@ Chart views may be limited on Notion's free plan. If unavailable: Throughput →
 - [ ] Two-way relations created from one side only (Notion creates the reverse).
 - [ ] Templates pasted and set as default.
 - [ ] Project hub template has linked views filtered by *this page*.
-- [ ] All views in section 6 created.
+- [ ] All views in section 6 created; the only chart (Throughput) is on the Project Management page.
 - [ ] Created a test project → milestone → feature → 3 tasks; moved one task through the board; Key, Progress, Cycle time and Timeline all show correct values. Then delete the test data.

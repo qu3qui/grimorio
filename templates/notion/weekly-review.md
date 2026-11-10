@@ -6,7 +6,7 @@ Defaults: Type = Weekly, Date = today. Name: "Weekly YYYY-Www". Time box: 30 min
 
 ## 1 · Look back (5 min)
 
-**Done this week:** <!-- count from Throughput view --> tasks
+**Done this week:** <!-- count from the Throughput chart or the hub's Weekly flow table --> tasks
 
 - …
 

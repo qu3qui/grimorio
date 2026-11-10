@@ -6,7 +6,7 @@ Two rituals only. Use a recurring calendar block so they actually happen.
 
 Create a page from the [weekly review template](../templates/notion/weekly-review.md) and go through:
 
-1. **Look back (5 min)** — Throughput chart: what got Done this week? Celebrate it, briefly.
+1. **Look back (5 min)** — Throughput chart (or the hub's *Weekly flow* table): what got Done this week? Celebrate it, briefly.
 2. **Board health (10 min)**
    - *Aging WIP* view: anything In Progress > 5 days? Split it, spike it, or unblock it.
    - WIP limits respected? (In Progress ≤ 2, Review/Test ≤ 2)

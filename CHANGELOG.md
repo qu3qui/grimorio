@@ -10,6 +10,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 - `claude/install.ps1`: Windows skill installer using directory junctions (Git Bash's `ln -s` copies instead of linking).
 - "On Windows" section in the README's machine setup (installer, paths, `winget` instead of Homebrew).
 
+### Changed
+
+- Notion metrics: Throughput is the only chart (Notion's free plan allows one per workspace) and lives on the Project Management page. Cycle time moves from a chart to *Weekly flow* tables grouped by week of *Completed* — one on the Project Management page, one in the project hub template (replacing its two chart placeholders).
+- Notion Projects: *Open tasks* is now a formula counting related tasks not in `Done`, because a rollup's *Count per group* accepts only one status group.
+
 ## [1.0.0] - 2026-10-23
 
 First release of **Grimorio** ([github.com/qu3qui/grimorio](https://github.com/qu3qui/grimorio)).

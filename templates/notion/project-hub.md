@@ -2,6 +2,7 @@
 Notion template for the Projects database (the project hub page).
 Defaults: Phase = Discovery, Health = On track.
 After pasting, replace every [Linked view: …] with a linked database view filtered by Project → contains → this page.
+No chart views here: each new project would duplicate them and hit Notion's per-workspace chart limit. The only chart (Throughput) lives on the Project Management page.
 -->
 ---
 
@@ -43,9 +44,7 @@ After pasting, replace every [Linked view: …] with a linked database view filt
 
 [Linked view: Tasks — Bugs]
 
-[Linked view: Tasks — Throughput]
-
-[Linked view: Tasks — Cycle time]
+[Linked view: Tasks — Weekly flow]
 
 ## Reviews
 
