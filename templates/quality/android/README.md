@@ -12,7 +12,7 @@
 
 1. Add the plugins and blocks from `gradle.snippet.kts` (version catalog, root and app `build.gradle.kts`).
 2. Copy `detekt.yml` to `config/detekt/detekt.yml`; append `editorconfig.snippet` to `.editorconfig` and set `indent_size = 4` in `[*]`.
-3. Add `.gitattributes` with `* text=auto eol=lf` and `*.bat text eol=crlf` (Windows + `mixed-line-ending` hook), add `exclude: .bat$` to the `mixed-line-ending` hook, and run `git config core.autocrlf false`.
+3. Add `.gitattributes` with `* text=auto eol=lf` and `*.bat text eol=crlf` (Windows + `mixed-line-ending` hook), add `exclude: \.bat$` to the `mixed-line-ending` hook, and run `git config core.autocrlf false`.
 4. Make sure `gradlew` is executable in git (`git update-index --chmod=+x gradlew`) — repos created on Windows often lose the bit and CI fails on Linux.
 5. Append `pre-commit-hooks.yaml` to `.pre-commit-config.yaml`; replace `.github/workflows/ci.yml` with `ci.yml`.
 6. Add the `gradle` ecosystem to `.github/dependabot.yml`.
