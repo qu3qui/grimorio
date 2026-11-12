@@ -9,6 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 - `claude/install.ps1`: Windows skill installer using directory junctions (Git Bash's `ln -s` copies instead of linking).
 - "On Windows" section in the README's machine setup (installer, paths, `winget` instead of Homebrew).
+- Android / Kotlin quality preset (`templates/quality/android/`): ktlint, detekt, Android Lint as errors, Kover; includes retrofit steps for existing projects.
 
 ### Changed
 

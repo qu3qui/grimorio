@@ -103,6 +103,7 @@ Solo projects still get reviewed:
 | Python | Ruff (`ruff format`, `ruff check`) | mypy (strict) | pytest + pytest-cov (`--cov-fail-under=70`) | [`templates/quality/python/`](../templates/quality/python/) |
 | TypeScript (web/Node) | Biome (`biome ci`) | `tsc --noEmit` (strict) | Vitest + v8 coverage thresholds | [`templates/quality/typescript/`](../templates/quality/typescript/) |
 | Flutter / Dart | `dart format`, `flutter analyze` + very_good_analysis | Dart analyzer (strict modes) | `flutter test --coverage` + min coverage check | [`templates/quality/flutter/`](../templates/quality/flutter/) |
+| Android / Kotlin | ktlint, detekt + Android Lint (warnings as errors) | Kotlin compiler | JUnit + Kover (`koverVerify`, min 70%) | [`templates/quality/android/`](../templates/quality/android/) |
 
 **Another stack?** Pick one tool per column (formatter, linter, type checker, test runner with coverage), add a folder under `templates/quality/` with the same four files (`README.md`, config(s), `pre-commit-hooks.yaml`, `ci.yml`) and record the choice in an ADR.
 

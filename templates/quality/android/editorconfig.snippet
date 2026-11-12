@@ -1,0 +1,7 @@
+# Append to .editorconfig (root template sets indent_size = 4 for Kotlin projects).
+[*.{kt,kts}]
+ktlint_code_style = android_studio
+# Compose call chains with trailing lambdas read better at 120 than at 100.
+max_line_length = 120
+# Compose: @Composable functions are PascalCase.
+ktlint_function_naming_ignore_when_annotated_with = Composable

@@ -1,0 +1,16 @@
+  # --- Android / Kotlin (append under `repos:`) ---
+  # Needs JDK 17+ on PATH or JAVA_HOME (Android Studio's bundled JBR works).
+  - repo: local
+    hooks:
+      - id: ktlint
+        name: ktlint (gradle)
+        entry: ./gradlew --quiet ktlintCheck
+        language: system
+        files: \.kts?$
+        pass_filenames: false
+      - id: detekt
+        name: detekt (gradle)
+        entry: ./gradlew --quiet detekt
+        language: system
+        files: \.kt$
+        pass_filenames: false
