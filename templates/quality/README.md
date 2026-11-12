@@ -14,5 +14,6 @@ One folder per stack. Each contains the same pieces, so `/project-bootstrap` can
 | Python | [`python/`](python/) |
 | TypeScript (web / Node) | [`typescript/`](typescript/) |
 | Flutter / Dart | [`flutter/`](flutter/) |
+| Android / Kotlin | [`android/`](android/) |
 
 Adding a stack: copy the closest folder, pick one tool per concern (formatter, linter, type checker, test runner + coverage threshold), and keep the three CI jobs (`pre-commit`, `secrets`, `quality`). See [guide chapter 12](../../guide/12-code-quality.md).

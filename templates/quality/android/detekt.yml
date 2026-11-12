@@ -1,0 +1,23 @@
+# Overrides on top of detekt's default config (buildUponDefaultConfig = true).
+# Every override needs a reason.
+
+naming:
+  FunctionNaming:
+    # Jetpack Compose: @Composable functions are PascalCase.
+    ignoreAnnotated: ["Composable"]
+
+complexity:
+  LongMethod:
+    # Compose screens are long by nature; still flagged above this.
+    ignoreAnnotated: ["Composable", "Preview"]
+  LongParameterList:
+    # Composables take many parameters (state + callbacks + modifier).
+    ignoreAnnotated: ["Composable"]
+
+style:
+  MagicNumber:
+    # UI dimensions and colors are literals in Compose.
+    ignorePropertyDeclaration: true
+    ignoreAnnotated: ["Composable", "Preview"]
+  UnusedPrivateMember:
+    ignoreAnnotated: ["Preview"]
