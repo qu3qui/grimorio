@@ -18,6 +18,7 @@
 6. Add the `gradle` ecosystem to `.github/dependabot.yml`.
 7. Local JDK: AGP needs JDK 17+. On Windows, point `JAVA_HOME` to Android Studio's JBR (`C:\Program Files\Android\Android Studio\jbr`) so the pre-commit hooks can run Gradle.
 8. Android Lint `OldTargetApi` fires on CI runners with a newer SDK than yours: bump `targetSdk` or disable the rule with a comment until you do.
+9. Lint findings inside dependency jars (e.g. `TrustAllX509TrustManager` in `google-http-client`) must go in `app/lint.xml` with `<ignore regexp="…"/>`, not the baseline: the baseline stores the local Gradle cache path, which never matches on CI.
 
 ### Existing project (retrofit)
 
